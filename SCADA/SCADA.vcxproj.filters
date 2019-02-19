@@ -111,19 +111,10 @@
     <ClCompile Include="page\propulsion.cpp">
       <Filter>page</Filter>
     </ClCompile>
-    <ClCompile Include="schema\event.cpp">
-      <Filter>schema</Filter>
-    </ClCompile>
     <ClCompile Include="page\operation.cpp">
       <Filter>page</Filter>
     </ClCompile>
-    <ClCompile Include="schema\dbtest.cpp">
-      <Filter>schema</Filter>
-    </ClCompile>
     <ClCompile Include="page\gauge.cpp">
-      <Filter>page</Filter>
-    </ClCompile>
-    <ClCompile Include="page\alogbook.cpp">
       <Filter>page</Filter>
     </ClCompile>
     <ClCompile Include="metrics.cpp" />
@@ -152,19 +143,10 @@
     <ClInclude Include="page\propulsion.hpp">
       <Filter>page</Filter>
     </ClInclude>
-    <ClInclude Include="schema\event.hpp">
-      <Filter>schema</Filter>
-    </ClInclude>
     <ClInclude Include="page\operation.hpp">
       <Filter>page</Filter>
     </ClInclude>
-    <ClInclude Include="schema\dbtest.hpp">
-      <Filter>schema</Filter>
-    </ClInclude>
     <ClInclude Include="page\gauge.hpp">
-      <Filter>page</Filter>
-    </ClInclude>
-    <ClInclude Include="page\alogbook.hpp">
       <Filter>page</Filter>
     </ClInclude>
     <ClInclude Include="stone\tongue\logbook.hpp">
@@ -469,12 +451,10 @@
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Yacht63FT_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="schema\event.dao.rktl">
       <Filter>schema</Filter>
     </None>
-    <None Include="schema\event.dao.rkt" />
     <None Include="stone\tongue\catalogue.csv">
       <Filter>stone\tongue</Filter>
     </None>

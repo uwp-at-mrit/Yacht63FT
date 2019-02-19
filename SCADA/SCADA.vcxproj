@@ -82,7 +82,6 @@
     <Import Project="..\BigBang\BigBang.vcxitems" Label="Shared" />
     <Import Project="..\Graphics\graphics.vcxitems" Label="Shared" />
     <Import Project="..\PLCIO\PLCIO.vcxitems" Label="Shared" />
-    <Import Project="..\Syslog\Syslog.vcxitems" Label="Shared" />
     <Import Project="..\DataAccess\DataAccess.vcxitems" Label="Shared" />
     <Import Project="..\ScalableVectorGraphlet\ScalableVectorGraphlet.vcxitems" Label="Shared" />
   </ImportGroup>
@@ -192,11 +191,9 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="packages.config" />
-    <None Include="schema\event.dao.rkt" />
     <None Include="schema\event.dao.rktl" />
     <None Include="stone\tongue\catalogue.csv" />
     <None Include="stone\tongue\logbook.resw.rkt" />
-    <None Include="SCADA_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LargeTile.scale-100.png" />
@@ -305,7 +302,6 @@
     <ClCompile Include="frame\navigatorbar.cpp" />
     <ClCompile Include="metrics.cpp" />
     <ClCompile Include="page\airconditioner.cpp" />
-    <ClCompile Include="page\alogbook.cpp" />
     <ClCompile Include="page\operation.cpp" />
     <ClCompile Include="page\generator.cpp" />
     <ClCompile Include="page\homepage.cpp" />
@@ -314,8 +310,6 @@
     <ClCompile Include="page\propeller.cpp" />
     <ClCompile Include="page\propulsion.cpp" />
     <ClCompile Include="plc.cpp" />
-    <ClCompile Include="schema\event.cpp" />
-    <ClCompile Include="schema\dbtest.cpp" />
     <ClCompile Include="Yacht63FT.cxx" />
   </ItemGroup>
   <ItemGroup>
@@ -323,7 +317,6 @@
     <ClInclude Include="frame\navigatorbar.hxx" />
     <ClInclude Include="metrics.hpp" />
     <ClInclude Include="page\airconditioner.hpp" />
-    <ClInclude Include="page\alogbook.hpp" />
     <ClInclude Include="page\operation.hpp" />
     <ClInclude Include="page\generator.hpp" />
     <ClInclude Include="page\homepage.hpp" />
@@ -332,8 +325,6 @@
     <ClInclude Include="page\propeller.hpp" />
     <ClInclude Include="page\propulsion.hpp" />
     <ClInclude Include="plc.hpp" />
-    <ClInclude Include="schema\event.hpp" />
-    <ClInclude Include="schema\dbtest.hpp" />
     <ClInclude Include="stone\tongue\logbook.hpp" />
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@
 #include "configuration.hpp"
 
 #include "plc.hpp"
-#include "sqlite3.hpp"
+#include "enum.hpp"
 
 #include "planet.hpp"
 #include "timer.hxx"
@@ -18,7 +18,6 @@
 #include "page/propeller.hpp"
 #include "page/propulsion.hpp"
 #include "page/airconditioner.hpp"
-#include "page/alogbook.hpp"
 #include "page/operation.hpp"
 #include "page/gauge.hpp"
 
@@ -42,7 +41,7 @@ private ref class YachtDisplay : public UniverseDisplay {
 internal:
 	YachtDisplay(Platform::String^ name, IPlanet* first_planet = nullptr)
 		: UniverseDisplay(DisplayFit::Fill, screen_width, screen_height, sketch_width, sketch_height,
-			make_system_logger(default_logging_level, name), first_planet) {}
+			make_system_logger(default_logging_level, name), name, nullptr, first_planet) {}
 };
 
 private ref class PageUniverse sealed : public YachtDisplay, public INavigatorAction {
@@ -65,15 +64,13 @@ protected:
 			case Yacht::Propulsion: this->push_planet(new PropulsionPage(plc_master, name)); break;
 			case Yacht::AirConditioner: this->push_planet(new ACPage(plc_master, name)); break;
 			case Yacht::Operation: this->push_planet(new OperationPage(plc_master, name)); break;
-			case Yacht::Logbook: this->push_planet(new LogbookPage(plc_master, name)); break;
+			//case Yacht::Logbook: this->push_planet(new LogbookPage(plc_master, name)); break;
 			case Yacht::Gauge: this->push_planet(new GaugePage(plc_master, name)); break;
 			default: this->push_planet(new Homepage(name)); break;
 			}
 		}
 	}
 };
-
-//#include "dirotation.hpp"
 
 private ref class Yacht63FT sealed : public StackPanel {
 public:
@@ -82,8 +79,6 @@ public:
 		this->Orientation = ::Orientation::Vertical;
 		this->HorizontalAlignment = ::HorizontalAlignment::Center;
 		this->VerticalAlignment = ::VerticalAlignment::Center;
-
-		//auto test = new IRotativeDirectory("ams");
 	}
 
 public:
@@ -102,8 +97,8 @@ public:
 		this->load_display(this->statusbar, screen_width, sketch_statusbar_height);
 		this->timer = ref new Timer(this->timeline, frame_per_second);
 
-		this->KeyDown += ref new KeyEventHandler(this->workspace, &UniverseDisplay::on_key);
-		this->workspace->navigator->SelectionChanged += ref new SelectionChangedEventHandler(this, &Yacht63FT::do_notify);
+		//this->KeyDown += ref new KeyEventHandler(this->workspace, &UniverseDisplay::on_key);
+		//this->workspace->navigator->SelectionChanged += ref new SelectionChangedEventHandler(this, &Yacht63FT::do_notify);
 	}
 
 private:
